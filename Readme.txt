@@ -6,3 +6,5 @@ Instruction pour deployer l'application
 utiliser xampp, wamp ...)
 
 - Ouvrir le fichier Acceuil.php qui la page principale.
+
+ok
