@@ -27,6 +27,7 @@ RUN echo '<VirtualHost *:80>\n\
         AllowOverride None\n\
         Require all granted\n\
     </Directory>\n\
+    DirectoryIndex Acceuil.php\n\
 </VirtualHost>' > /etc/apache2/sites-available/000-default.conf
 
 # Exposer le port 80
