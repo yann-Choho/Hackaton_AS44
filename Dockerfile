@@ -13,21 +13,21 @@ RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html
 
 # Configurer Apache pour permettre l'accès au répertoire
-RUN echo "<Directory /var/www/>
-    Options Indexes FollowSymLinks
-    AllowOverride None
-    Require all granted
-</Directory>" >> /etc/apache2/apache2.conf
+RUN echo '<Directory /var/www/>\n\
+    Options Indexes FollowSymLinks\n\
+    AllowOverride None\n\
+    Require all granted\n\
+</Directory>' >> /etc/apache2/apache2.conf
 
 # Configurer le site par défaut pour Apache
-RUN echo "<VirtualHost *:80>
-    DocumentRoot /var/www/html
-    <Directory /var/www/html>
-        Options Indexes FollowSymLinks
-        AllowOverride None
-        Require all granted
-    </Directory>
-</VirtualHost>" > /etc/apache2/sites-available/000-default.conf
+RUN echo '<VirtualHost *:80>\n\
+    DocumentRoot /var/www/html\n\
+    <Directory /var/www/html>\n\
+        Options Indexes FollowSymLinks\n\
+        AllowOverride None\n\
+        Require all granted\n\
+    </Directory>\n\
+</VirtualHost>' > /etc/apache2/sites-available/000-default.conf
 
 # Exposer le port 80
 EXPOSE 80
