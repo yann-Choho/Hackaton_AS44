@@ -21,7 +21,7 @@ if (!empty($req2)) {
     exit;
 }
 
-if (!preg_match("/^[a-zA-Z\s\-]+$/", $_POST['Job'])) {
+if (!preg_match("/^[\p{L}\s\-]+$/u", $_POST['Job'])) {
     $_SESSION['sms_inscrip'] = "Le champ 'métier' ne peut contenir que des lettres, des espaces et des tirets.";
     header('location:../Inscription.php');
     exit;
@@ -44,7 +44,7 @@ $req->execute(array(
     'mail' => htmlspecialchars($_POST['Email'], ENT_QUOTES, 'UTF-8'),
     'mdp' => sha1($_POST['Mdp']),
     'num' => $_SESSION['numero_user'],
-    'stat' => htmlspecialchars($_POST['Statuts']),
+    'stat' => htmlspecialchars($_POST['Status']),
     'job' => htmlspecialchars(trim($_POST['Job']), ENT_QUOTES, 'UTF-8')
 ));
 unset($_SESSION['disabled1']);

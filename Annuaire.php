@@ -192,7 +192,7 @@ $stmt->execute();
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="Accueil_AS_simple.php">Accueil</a>
+                        <a class="nav-link" href="AS_Simple.php">Accueil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Agenda</a>

@@ -50,7 +50,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#hero">Accueil</a>
+                        <a class="nav-link" href="#">Accueil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#about">Agenda</a>
@@ -68,7 +68,7 @@
                         <a class="nav-link" href="Annuaire.php">Annuaire</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contacter membre du bureau</a>
+                        <a class="nav-link" href="Discuter.php">Contacter membre du bureau</a>
                     </li>
                 </ul>
                 <a href="Deconnexion.php" class="btn btn-brand ms-lg-3" id="annuaire">Se déconnecter</a>

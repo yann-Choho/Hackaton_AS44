@@ -20,8 +20,8 @@ $req->execute(array($_SESSION['user_numero'], $_SESSION['tableau'][$_SESSION['in
 
 
 //Recuperation des membres du bureau
-$req2 = $bdd->prepare("SELECT * FROM compte WHERE Statut = ?");
-$req2->execute(array("AS Membre du bureau"));
+$req2 = $bdd->prepare("SELECT * FROM compte WHERE Statut = ? AND Numero !=?");
+$req2->execute(array("AS Membre du bureau",$_SESSION['user_numero']));
 
 //Afficher chat-about
 $req4 = $bdd->prepare("SELECT*FROM liste WHERE Numero=?");
@@ -325,7 +325,7 @@ $reponse4 = $req4->fetch();
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="Accueil_AS_simple.php">Accueil</a>
+                        <a class="nav-link" href="AS_Simple.php">Accueil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Agenda</a>
@@ -383,6 +383,12 @@ $reponse4 = $req4->fetch();
                             }
                             $_SESSION['tableau'] = $tableau;
                             ?>
+                            <li class="clearfix-active">
+                                <div class="about">
+                                    <div class="name"></div>
+                                    <div class="status"></div>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                     <div class="chat">

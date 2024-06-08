@@ -24,7 +24,7 @@
         $_SESSION['user_mail'] = $req['Email'];
         $_SESSION['user_mdp'] = $req['Mot_de_passe'];
         $_SESSION['user_numero'] = $req['Numero'];
-        header('location:../Acceuil_AS_simple.php');
+        header('location:../AS_Simple.php');
         exit;
     }
     ob_end_flush();
