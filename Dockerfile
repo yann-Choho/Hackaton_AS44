@@ -22,7 +22,7 @@ RUN echo '<Directory /var/www/>\n\
 </Directory>' >> /etc/apache2/apache2.conf
 
 # Configurer le site par défaut pour Apache
-RUN echo '<VirtualHost *:80>\n\
+RUN echo '<VirtualHost *:5000>\n\
     DocumentRoot /var/www/html\n\
     <Directory /var/www/html>\n\
         Options Indexes FollowSymLinks\n\
@@ -32,8 +32,8 @@ RUN echo '<VirtualHost *:80>\n\
     DirectoryIndex Acceuil.php\n\
 </VirtualHost>' > /etc/apache2/sites-available/000-default.conf
 
-# Exposer le port 80
-EXPOSE 80
+# Exposer le port 5000
+EXPOSE 5000
 
 # Démarrer le serveur Apache
 CMD ["apache2-foreground"]
